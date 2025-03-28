@@ -23,11 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-bottom: 100px;
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
+    margin: 0;
 }
 
 .switch {
@@ -35,6 +31,7 @@ body {
     display: inline-block;
     width: 62.5px;
     height: 30px;
+    margin: 0 4px;
 }
 
 .switch input {
@@ -77,7 +74,9 @@ input:checked + .slider:before {
 
 .profile {
     text-align: center;
+    margin-top: 60px;
     margin-bottom: 40px;
+    position: relative;
 }
 
 .profile-photo {
@@ -85,6 +84,49 @@ input:checked + .slider:before {
     height: 180px;
     border-radius: 50%;
     margin-bottom: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hover effect container */
+.profile-photo-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+/* Glow effect on hover */
+.profile-photo-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(76, 110, 245, 0.4); /* Ana tema rengimiz */
+    filter: blur(15px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+/* Hover animations */
+.profile-photo-container:hover::before {
+    opacity: 1;
+}
+
+.profile-photo-container:hover .profile-photo {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(76, 110, 245, 0.3);
+}
+
+/* Light theme adjustments */
+body.light-theme .profile-photo-container::before {
+    background: rgba(76, 110, 245, 0.2);
+}
+
+body.light-theme .profile-photo-container:hover .profile-photo {
+    box-shadow: 0 0 30px rgba(76, 110, 245, 0.2);
 }
 
 .profile h1 {
@@ -124,10 +166,216 @@ input:checked + .slider:before {
 .about { background-color: #4c6ef5; }
 .linkedin { background-color: #0077b5; }
 .github { background-color: #333; }
+.medium { background-color: #02b875; }
 .twitter { background-color: #1da1f2; }
 .blog { background-color: #2ecc71; }
 
 /* Font Awesome ikonları için */
 .link-button i {
     margin-right: 8px;
+}
+
+/* About page styles */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 60px;
+}
+
+.back-button:hover {
+    color: #e0e0e0;
+}
+
+.about-text {
+    line-height: 1.6;
+}
+
+.about-text h2 {
+    margin-bottom: 25px;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+/* Theme variables */
+:root {
+    /* Light theme */
+    --bg-color-light: #ffffff;
+    --text-color-light: #333333;
+    --text-secondary-light: #666666;
+    
+    /* Dark theme */
+    --bg-color-dark: #1a1a1a;
+    --text-color-dark: #ffffff;
+    --text-secondary-dark: #e0e0e0;
+}
+
+/* Light theme class */
+body.light-theme {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+body.light-theme .bio,
+body.light-theme .about-text p {
+    color: var(--text-secondary-light);
+}
+
+/* Dark theme class (default) */
+body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Top controls styling */
+.top-controls {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: auto;
+    z-index: 10;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch .slider {
+    background-color: #4c6ef5;
+}
+
+.theme-switch .slider:before {
+    background-color: white;
+}
+
+.theme-switch .fa-sun,
+.theme-switch .fa-moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.theme-switch .fa-sun {
+    left: 7px;
+}
+
+.theme-switch .fa-moon {
+    right: 7px;
+}
+
+/* Light theme button colors */
+body.light-theme .link-button.about { background-color: #4c6ef5; }
+body.light-theme .link-button.linkedin { background-color: #0077b5; }
+body.light-theme .link-button.github { background-color: #333; }
+body.light-theme .link-button.medium { background-color: #02b875; }
+body.light-theme .link-button.twitter { background-color: #1da1f2; }
+body.light-theme .link-button.blog { background-color: #2ecc71; }
+
+body.light-theme .back-button {
+    color: var(--text-color-light);
+}
+
+body.light-theme .back-button:hover {
+    color: var(--text-secondary-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-controls {
+        width: calc(100% - 40px);
+        justify-content: space-between;
+    }
+
+    .back-button {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile {
+        margin-top: 80px;
+    }
+
+    .back-button {
+        margin-top: 100px;
+    }
+
+    .top-controls {
+        position: fixed;
+        top: 20px;
+        background-color: var(--bg-color-dark);
+        padding: 10px 0;
+    }
+
+    body.light-theme .top-controls {
+        background-color: var(--bg-color-light);
+    }
+}
+
+/* Light theme text colors */
+body.light-theme .about-text h2 {
+    color: var(--text-color-light);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .about-text p {
+    color: var(--text-secondary-light);
+}
+
+/* Gradient background for better readability in light theme */
+body.light-theme .about-content {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 30px;
+    margin-top: -10px;
+}
+
+/* Dark theme text shadow for better contrast */
+.about-text h2 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Email link styling */
+.email-link {
+    color: #4c6ef5;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.email-link:hover {
+    color: #3b5bdb;
+    text-decoration: underline;
+}
+
+/* Light theme email link */
+body.light-theme .email-link {
+    color: #3b5bdb;
+}
+
+body.light-theme .email-link:hover {
+    color: #364fc7;
 } 
