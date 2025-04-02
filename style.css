@@ -201,6 +201,11 @@ body.light-theme .profile-photo-container:hover .profile-photo {
     color: #191414;
     background-color: #1db954;
 }
+.apple-podcasts { 
+    color: #ffffff;
+    background-color: #AB34AF;
+    background-image: linear-gradient(to bottom, #AB34AF, #D42E5D);
+}
 
 /* Font Awesome ikonları için */
 .link-button i {
@@ -334,6 +339,11 @@ body.light-theme .link-button.medium {
 body.light-theme .link-button.spotify { 
     color: #191414;
     background-color: #1db954;
+}
+body.light-theme .link-button.apple-podcasts { 
+    color: #ffffff;
+    background-color: #AB34AF;
+    background-image: linear-gradient(to bottom, #AB34AF, #D42E5D);
 }
 
 body.light-theme .back-button {
