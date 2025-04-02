@@ -159,22 +159,26 @@ body.light-theme .profile-photo-container:hover .profile-photo {
 }
 
 .link-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     padding: 12px;
     border-radius: 8px;
     text-decoration: none;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
     transition: transform 0.2s, filter 0.2s ease;
-    font-size: 16px;
-    height: 48px;
+    font-size: 1.125rem;
+    min-height: 48px;
+    margin-bottom: 12px;
+    text-align: center;
 }
 
 .link-button:hover {
-    transform: scale(1.02) translateY(-1px);
+    transform: translateY(-1px);
     filter: brightness(90%);
+    color: white;
 }
 
 .about { 
