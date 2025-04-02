@@ -152,7 +152,7 @@ body.light-theme .profile-photo-container:hover .profile-photo {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     max-width: 350px;
     margin-left: auto;
     margin-right: auto;
@@ -171,7 +171,7 @@ body.light-theme .profile-photo-container:hover .profile-photo {
     transition: transform 0.2s, filter 0.2s ease;
     font-size: 1.125rem;
     min-height: 48px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -183,7 +183,6 @@ body.light-theme .profile-photo-container:hover .profile-photo {
 
 .about { 
     background-color: #4c6ef5; 
-    margin-bottom: 0px;
 }
 .linkedin { 
     background-color: #0077b5; 
