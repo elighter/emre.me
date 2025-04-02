@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    max-width: 680px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 20px;
     position: relative;
@@ -75,25 +75,26 @@ input:checked + .slider:before {
 .profile {
     text-align: center;
     margin-top: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     position: relative;
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     transition: all 0.3s ease;
     position: relative;
     cursor: pointer;
+    border: none;
 }
 
 /* Hover effect container */
 .profile-photo-container {
     position: relative;
     display: inline-block;
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
 
 /* Glow effect on hover */
@@ -103,7 +104,7 @@ input:checked + .slider:before {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: rgba(76, 110, 245, 0.4); /* Ana tema rengimiz */
+    background: rgba(76, 110, 245, 0.4);
     filter: blur(15px);
     opacity: 0;
     transition: all 0.3s ease;
@@ -130,44 +131,67 @@ body.light-theme .profile-photo-container:hover .profile-photo {
 }
 
 .profile h1 {
-    font-size: 48px;
-    margin-bottom: 16px;
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    margin-top: 0;
 }
 
 .bio {
     color: #e0e0e0;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     padding: 0 20px;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .link-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 12px;
     border-radius: 8px;
     text-decoration: none;
     color: white;
     font-weight: 500;
     transition: transform 0.2s;
+    font-size: 16px;
+    height: 48px;
 }
 
 .link-button:hover {
     transform: scale(1.02);
 }
 
-.about { background-color: #4c6ef5; }
-.linkedin { background-color: #0077b5; }
-.github { background-color: #333; }
-.twitter { background-color: #1da1f2; }
-.blog { background-color: #2ecc71; }
+.about { 
+    background-color: #4c6ef5; 
+    margin-bottom: 0px;
+}
+.linkedin { 
+    background-color: #0077b5; 
+}
+.github { 
+    background-color: #333; 
+}
+.medium { 
+    background-color: #02b875; 
+}
+.spotify { 
+    background-color: #1DB954; 
+}
 
 /* Font Awesome ikonları için */
 .link-button i {
@@ -176,7 +200,7 @@ body.light-theme .profile-photo-container:hover .profile-photo {
 
 /* About page styles */
 .about-content {
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
     text-align: left;
@@ -187,7 +211,7 @@ body.light-theme .profile-photo-container:hover .profile-photo {
     margin-bottom: 30px;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 16px;
     margin-top: 60px;
 }
 
@@ -196,18 +220,18 @@ body.light-theme .profile-photo-container:hover .profile-photo {
 }
 
 .about-text {
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .about-text h2 {
     margin-bottom: 25px;
-    font-size: 2em;
+    font-size: 28px;
     color: #ffffff;
 }
 
 .about-text p {
     margin-bottom: 20px;
-    font-size: 1.1em;
+    font-size: 16px;
     color: #e0e0e0;
 }
 
@@ -289,8 +313,8 @@ body {
 body.light-theme .link-button.about { background-color: #4c6ef5; }
 body.light-theme .link-button.linkedin { background-color: #0077b5; }
 body.light-theme .link-button.github { background-color: #333; }
-body.light-theme .link-button.twitter { background-color: #1da1f2; }
-body.light-theme .link-button.blog { background-color: #2ecc71; }
+body.light-theme .link-button.medium { background-color: #02b875; }
+body.light-theme .link-button.spotify { background-color: #1DB954; }
 
 body.light-theme .back-button {
     color: var(--text-color-light);
@@ -313,8 +337,25 @@ body.light-theme .back-button:hover {
 }
 
 @media (max-width: 480px) {
+    .profile h1 {
+        font-size: 40px;
+    }
+    
     .profile {
         margin-top: 80px;
+    }
+
+    .container {
+        max-width: 400px;
+    }
+
+    .bio {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+    
+    .links {
+        max-width: 300px;
     }
 
     .back-button {
@@ -376,4 +417,4 @@ body.light-theme .email-link {
 
 body.light-theme .email-link:hover {
     color: #364fc7;
-} 
+}
