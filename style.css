@@ -190,9 +190,9 @@ body.light-theme .profile-photo-container:hover .profile-photo {
     border: 1px solid #FFFFFF;
 }
 .medium { 
-    color: #ffffff;
-    background-color: #02b875;
-    border: none;
+    color: #292929;
+    background-color: #F5F5F1;
+    border: 1px solid #292929;
 }
 .spotify { 
     color: #191414;
@@ -324,9 +324,9 @@ body.light-theme .link-button.github {
     border: 1px solid #000000;
 }
 body.light-theme .link-button.medium { 
-    color: #ffffff;
-    background-color: #02b875;
-    border: none;
+    color: #292929;
+    background-color: #F5F5F1;
+    border: 1px solid #292929;
 }
 body.light-theme .link-button.spotify { 
     color: #191414;
