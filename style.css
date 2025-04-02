@@ -393,10 +393,12 @@ body.light-theme .back-button:hover {
     }
 
     .top-controls {
-        position: fixed;
+        position: absolute;
         top: 20px;
         background-color: var(--bg-color-dark);
         padding: 10px 0;
+        width: calc(100% - 40px);
+        z-index: 10;
     }
 
     body.light-theme .top-controls {
